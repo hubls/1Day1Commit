@@ -1,20 +1,35 @@
 n = int(input())
 
 lst = []
+answer_lst = []
+count = 1
+flag = 0
+
 for i in range(n):
-    lst.append(int(input()))
+    num = int(input())
 
-basic_lst = list(range(1,n+1))
+    while count <= num :
+
+        lst.append(count)
+        answer_lst.append('+')
+        count += 1
+
+    if lst[-1] == num :
+        lst.pop()
+        answer_lst.append('-')
+
+    else:
+        print('NO')
+        flag = 1
+        break
+
+if flag == 0:
+    for idx in answer_lst:
+        print(idx)
 
 
-result = []
 
-temp = []
 
-plus_cnt = 0
-basic_cnt = 0
 
-for j in range(2*n):
-    if basic_lst[plus_cnt] <= lst[basic_cnt]:
-        plus_cnt += 1
+
 
